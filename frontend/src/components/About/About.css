@@ -1,0 +1,142 @@
+/* About Page Styles */
+.about-container {
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header Section */
+  .about-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .about-header h1 {
+    font-size: 3rem;
+    color: #333;
+  }
+  
+  .about-header p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  /* Mission Section */
+  .about-mission {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .about-mission .about-text {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .about-mission .about-text h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .about-mission .about-text p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .about-mission .about-image {
+    flex: 1;
+  }
+  
+  .about-mission .about-image img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Gallery Section */
+  .about-gallery {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .about-gallery h2 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .about-gallery p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .gallery {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .gallery-item {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item img:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Contact Section */
+  .about-contact {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .about-contact h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .about-contact p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .about-contact a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  .about-contact a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-mission {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .about-mission .about-text {
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .gallery {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .gallery-item {
+      margin-bottom: 20px;
+    }
+  }
+  

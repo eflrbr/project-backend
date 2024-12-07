@@ -3,15 +3,15 @@ import './EventCalendar.css'; // Import the CSS file
 
 function EventCalendar() {
   const [events, setEvents] = useState([]);
-  const [newEvent, setNewEvent] = useState({ name: '', date: '', location: '' });
+  const [newEvent, setNewEvent] = useState({ name: '', date: '', location: '', mapUrl: '' });
 
   // Replace the fetch call with mock data for now
   useEffect(() => {
     // Mock data for events (this simulates the backend data)
     const mockEvents = [
-      { id: 1, name: 'Adopt-a-thon', date: '2024-12-15', location: 'City Park' },
-      { id: 2, name: 'Pet Health Expo', date: '2024-12-20', location: 'Downtown Convention Center' },
-      { id: 3, name: 'Puppy Playdate', date: '2024-12-25', location: 'Bark Park' }
+      { id: 1, name: 'Adopt-a-thon', date: '2024-12-15', location: 'City Park', mapUrl: 'https://www.google.com/maps?q=City+Park' },
+      { id: 2, name: 'Pet Health Expo', date: '2024-12-20', location: 'Downtown Convention Center', mapUrl: 'https://www.google.com/maps?q=Downtown+Convention+Center' },
+      { id: 3, name: 'Puppy Playdate', date: '2024-12-25', location: 'Bark Park', mapUrl: 'https://www.google.com/maps?q=Bark+Park' },
     ];
 
     setEvents(mockEvents);
@@ -23,14 +23,12 @@ function EventCalendar() {
   };
 
   const handleAddEvent = () => {
-    // Simulate adding a new event by appending it to the state
     const newEventWithId = { ...newEvent, id: events.length + 1 }; // Simulate adding an ID
     setEvents([...events, newEventWithId]); // Add to the state without re-fetching
-    setNewEvent({ name: '', date: '', location: '' }); // Reset form fields
+    setNewEvent({ name: '', date: '', location: '', mapUrl: '' }); // Reset form fields
   };
 
   const handleDeleteEvent = (eventId) => {
-    // Remove event from the state
     setEvents(events.filter(event => event.id !== eventId)); // Remove from the state
   };
 
@@ -39,15 +37,26 @@ function EventCalendar() {
       <h2>Event Calendar</h2>
       <div className="row">
         {events.map((event) => (
-          <div key={event.id} className="col-md-4">
-            <div className="card">
-              <div className="card-header">
-                <h5>{event.name}</h5>
-              </div>
-              <div className="card-body">
-                <p><strong>Date:</strong> {event.date}</p>
-                <p><strong>Location:</strong> {event.location}</p>
-                <button className="btn btn-danger btn-sm" onClick={() => handleDeleteEvent(event.id)}>Delete</button>
+          <div key={event.id} className="col-md-6">
+            <div className="card home-card">
+              <div className="card-content">
+                <div className="card-info">
+                  <h5 className="card-title">{event.name}</h5>
+                  <p><strong>Date:</strong> {event.date}</p>
+                  <p><strong>Location:</strong> {event.location}</p>
+                  <button className="btn btn-danger" onClick={() => handleDeleteEvent(event.id)}>Delete</button>
+                </div>
+                <div className="card-map">
+                  <iframe
+                    src={`https://www.google.com/maps/embed/v1/place?q=${encodeURIComponent(event.location)}&key=AIzaSyD3FNJm5wrbfvPSb27f0CRHrBsF9EYHnyY`}
+                    width="100%"
+                    height="200"
+                    frameBorder="0"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    title="Event Location"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
@@ -78,7 +87,6 @@ function EventCalendar() {
               value={newEvent.date}
               onChange={handleInputChange}
               className="form-control"
-              placeholder="Enter event date"
             />
           </div>
           <div className="form-group">
@@ -91,6 +99,18 @@ function EventCalendar() {
               onChange={handleInputChange}
               className="form-control"
               placeholder="Enter event location"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="mapUrl">Map URL (Google Maps)</label>
+            <input
+              type="text"
+              name="mapUrl"
+              id="mapUrl"
+              value={newEvent.mapUrl}
+              onChange={handleInputChange}
+              className="form-control"
+              placeholder="Enter Google Maps URL for event location"
             />
           </div>
           <button type="button" className="btn btn-primary" onClick={handleAddEvent}>Add Event</button>

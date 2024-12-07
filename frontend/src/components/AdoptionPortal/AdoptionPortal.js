@@ -3,15 +3,15 @@ import './AdoptionPortal.css'; // Import the CSS file
 
 function AdoptionPortal() {
   const [adoptablePets, setAdoptablePets] = useState([]);
-  const [newPet, setNewPet] = useState({ name: '', breed: '', age: '', shelter: '' });
+  const [newPet, setNewPet] = useState({ name: '', breed: '', age: '', shelter: '', image: '', description: '' });
 
   // Replace the fetch call with mock data for now
   useEffect(() => {
     // Mock data for pets (this will simulate the backend data)
     const mockPets = [
-      { id: 1, name: 'Bella', breed: 'Labrador', age: 3, shelter: 'Happy Paws Shelter' },
-      { id: 2, name: 'Charlie', breed: 'Beagle', age: 2, shelter: 'Paws & Claws Shelter' },
-      { id: 3, name: 'Max', breed: 'Golden Retriever', age: 4, shelter: 'Furry Friends Shelter' },
+      { id: 1, name: 'Bella', breed: 'Labrador', age: 3, shelter: 'Happy Paws Shelter', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOBU6snTCr31gejiVW9IToA617pq5phGSD11-abOb9T-M3qH4C0oUK4etTAuSW-x9K64_qFSAwejzmoqrs3OA0XA', description: 'Bella is a playful Labrador with a love for adventure. She enjoys being around people and other dogs.' },
+      { id: 2, name: 'Charlie', breed: 'Beagle', age: 2, shelter: 'Paws & Claws Shelter', image: 'https://www.dogster.com/wp-content/uploads/2024/03/kerry-beagle-lying-on-the-grass_DannyWalshm-Shutterstock-e1666052141642.jpg', description: 'Charlie is a curious Beagle who loves to explore. He is friendly and gets along well with children and other pets.' },
+      { id: 3, name: 'Max', breed: 'Golden Retriever', age: 4, shelter: 'Furry Friends Shelter', image: 'https://heronscrossing.vet/wp-content/uploads/Golden-Retriever-1024x683.jpg', description: 'Max is a gentle Golden Retriever. He is well-trained, loves long walks, and is a perfect family companion.' },
     ];
 
     setAdoptablePets(mockPets);
@@ -25,7 +25,7 @@ function AdoptionPortal() {
   const handleAddPet = () => {
     const newPetWithId = { ...newPet, id: adoptablePets.length + 1 }; // Simulate adding an ID
     setAdoptablePets([...adoptablePets, newPetWithId]); // Add to the state without re-fetching
-    setNewPet({ name: '', breed: '', age: '', shelter: '' }); // Reset form fields
+    setNewPet({ name: '', breed: '', age: '', shelter: '', image: '', description: '' }); // Reset form fields
   };
 
   const handleDeletePet = (petId) => {
@@ -34,18 +34,20 @@ function AdoptionPortal() {
 
   return (
     <div className="container">
-      <h2>Adoption Portal</h2>
+      <h2>Adopt a Pet</h2>
       <div className="row">
         {adoptablePets.map((pet) => (
-          <div key={pet.id} className="col-md-4">
-            <div className="card">
-              <div className="card-header">
-                <h5>{pet.name} ({pet.breed})</h5>
-              </div>
-              <div className="card-body">
-                <p><strong>Age:</strong> {pet.age}</p>
-                <p><strong>Shelter:</strong> {pet.shelter}</p>
-                <button className="btn btn-danger btn-sm" onClick={() => handleDeletePet(pet.id)}>Delete</button>
+          <div key={pet.id} className="col-md-6">
+            <div className="card home-card">
+              <div className="card-content">
+                <div className="card-info">
+                  <h5 className="card-title">{pet.name} ({pet.breed})</h5>
+                  <p><strong>Age:</strong> {pet.age}</p>
+                  <p><strong>Shelter:</strong> {pet.shelter}</p>
+                  <p><strong>Description:</strong> {pet.description}</p>
+                  <button className="btn btn-danger" onClick={() => handleDeletePet(pet.id)}>Delete</button>
+                </div>
+                <img src={pet.image} alt={pet.name} className="card-img" />
               </div>
             </div>
           </div>
@@ -101,6 +103,29 @@ function AdoptionPortal() {
               onChange={handleInputChange}
               className="form-control"
               placeholder="Enter shelter name"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="image">Image URL</label>
+            <input
+              type="text"
+              name="image"
+              id="image"
+              value={newPet.image}
+              onChange={handleInputChange}
+              className="form-control"
+              placeholder="Enter pet image URL"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="description">Description</label>
+            <textarea
+              name="description"
+              id="description"
+              value={newPet.description}
+              onChange={handleInputChange}
+              className="form-control"
+              placeholder="Enter pet's description"
             />
           </div>
           <button type="button" className="btn btn-primary" onClick={handleAddPet}>Add Pet</button>

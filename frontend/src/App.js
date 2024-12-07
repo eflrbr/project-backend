@@ -5,6 +5,7 @@ import Navbar from './components/NavBar/Navbar'; // Import the Navbar component
 import AdoptionPortal from './components/AdoptionPortal/AdoptionPortal';
 import Services from './components/Services/Services';
 import EventCalendar from './components/EventCalendar/EventCalendar';
+import About from './components/About/About';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/adoption' element={<AdoptionPortal />} />
         <Route path='/services' element={<Services />} />
         <Route path='/events' element={<EventCalendar />} />
+        <Route path='/about' element={<About />} />
       </Routes>
     </Router>
   );

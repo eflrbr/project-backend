@@ -1,0 +1,83 @@
+/* Home Container */
+.home-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Carousel Styling */
+.home-carousel {
+  position: relative;
+  height: 100vh; /* Full page height */
+  width: 100%;
+}
+
+.carousel-item {
+  height: 100%; /* Ensure carousel item takes full viewport height */
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  position: relative;
+}
+
+/* Transparent background covering the entire image */
+.carousel-img-container {
+  height: 100%;
+  width: 100%; /* Full width */
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Keep the image centered */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-caption {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background for the text */
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.carousel-caption h3 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.carousel-caption p {
+  font-size: 2.5rem;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+.home-btn {
+  background-color: #4CAF50; /* Soft green */
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-caption h3 {
+    font-size: 2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.2rem;
+  }
+}

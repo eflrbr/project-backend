@@ -1,0 +1,161 @@
+/* Global Styling */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f7f7f7; /* Soft background color */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container Styling */
+.container {
+  padding: 40px;
+  background-color: #fff; /* White background for the container */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Heading Styling */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #555; /* Softer text color */
+  font-size: 2rem;
+  font-weight: 300; /* Lighter font weight */
+}
+
+/* Card Styling */
+.card {
+  margin-bottom: 20px;
+  border: 1px solid #e0e0e0; /* Light border color */
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* Slightly more shadow on hover */
+}
+
+/* Card Header */
+.card-header {
+  background-color: #5cbf92; /* Soft, happy green */
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 12px;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+/* Card Body */
+.card-body {
+  padding: 20px;
+  font-size: 1rem;
+}
+
+/* Card Text */
+.card-body p {
+  color: #777; /* Muted text for descriptions */
+  margin-bottom: 10px;
+}
+
+.card-body p strong {
+  color: #555; /* Slightly darker text for important labels */
+}
+
+/* Button Styling */
+.btn-danger {
+  background-color: #f4a261; /* Soft orange */
+  border: none;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #e76f51; /* Darker orange on hover */
+}
+
+/* Form Section */
+.form-section {
+  margin-top: 40px;
+  padding: 30px;
+  background-color: #f9f9f9; /* Light gray background for form */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Heading */
+.form-section h3 {
+  margin-bottom: 20px;
+  color: #555;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Form Labels */
+.form-group label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Form Inputs */
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #fafafa; /* Very light background */
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #5cbf92; /* Focus state with the soft green color */
+  outline: none;
+}
+
+/* Add Event Button */
+.btn-primary {
+  background-color: #5cbf92; /* Soft green for buttons */
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #4a9c7b; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 15px;
+  }
+
+  .btn-danger,
+  .btn-primary {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .form-section {
+    padding: 20px;
+  }
+}

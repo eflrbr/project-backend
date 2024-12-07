@@ -1,0 +1,110 @@
+/* Global Styling */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f7f7f7; /* Light background for the page */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container Styling */
+.container {
+  padding: 40px 20px;
+  background-color: #fff; /* White background for the container */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container */
+}
+
+/* Services Heading */
+.services-heading {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #4CAF50; /* Soft green */
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+/* Service Card Styling */
+.service-card {
+  border: none;
+  border-radius: 15px;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Light shadow for cards */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Slight shadow increase on hover */
+}
+
+/* Card Image */
+.service-card img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Card Title */
+.service-card .card-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+/* Card Text */
+.service-card .card-text {
+  color: #777; /* Slightly lighter text */
+  margin-bottom: 20px;
+}
+
+/* Contact Link */
+.service-contact {
+  color: #4CAF50; /* Soft green for links */
+  text-decoration: none;
+}
+
+.service-contact:hover {
+  text-decoration: underline;
+  color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: #4CAF50; /* Soft green */
+  border: none;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-card {
+    margin-bottom: 20px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .service-card img {
+    height: 150px;
+  }
+}
